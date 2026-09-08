@@ -1,0 +1,70 @@
+    <section id="contact" class="section section-soft" aria-labelledby="contactTitle">
+      <div class="container">
+        <div class="section-head" data-reveal="up">
+          <p class="eyebrow">Contacto</p>
+          <h2 id="contactTitle">Vamos falar sobre a próxima oportunidade</h2>
+        </div>
+
+        <div class="contact-layout">
+          <form id="contactForm" class="contact-form" data-reveal="left" novalidate>
+            <div class="form-row">
+              <label for="name">Nome</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="O seu nome" required aria-required="true" maxlength="100">
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="nome@empresa.com" required aria-required="true" maxlength="150">
+            </div>
+
+            <div class="form-row">
+              <label for="subject">Assunto</label>
+              <input id="subject" name="subject" type="text" placeholder="Oportunidade / proposta" required aria-required="true" maxlength="150">
+            </div>
+
+            <div class="form-row">
+              <label for="message">Mensagem</label>
+              <textarea id="message" name="message" rows="5" placeholder="Escreva a sua mensagem..." required aria-required="true" maxlength="3000"></textarea>
+            </div>
+
+            <div class="hp-field" aria-hidden="true">
+              <label for="company">Empresa</label>
+              <input id="company" name="company" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              Enviar mensagem
+            </button>
+            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="contact-grid" data-reveal="right">
+            <a class="contact-card" href="mailto:andersonneto.dev.fullstack@gmail.com">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <h3>Email</h3>
+              <p>andersonneto.dev.fullstack@gmail.com</p>
+            </a>
+
+            <a class="contact-card" href="https://wa.me/351937493326" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <h3>Telefone / WhatsApp</h3>
+              <p>+351 937 493 326</p>
+            </a>
+
+            <a class="contact-card" href="https://linkedin.com/in/anderson-fullstack-developer" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+              <h3>LinkedIn</h3>
+              <p>anderson-fullstack-developer</p>
+            </a>
+
+            <a class="contact-card" href="https://github.com/andersonneto18" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-github" aria-hidden="true"></i>
+              <h3>GitHub</h3>
+              <p>andersonneto18</p>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
