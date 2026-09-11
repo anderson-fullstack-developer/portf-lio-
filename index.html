@@ -14,12 +14,12 @@
   <meta property="og:title" content="Anderson Neto | Junior Full-Stack Developer">
   <meta property="og:description" content="Portfólio de Anderson Neto, Junior Full-Stack Developer em Lisboa, especializado em React, Next.js, TypeScript, Node.js e desenvolvimento de aplicações web.">
   <meta property="og:url" content="https://andersonneto.gt.tc">
-  <meta property="og:image" content="https://andersonneto.gt.tc/assets/img/profile/an.png">
+  <meta property="og:image" content="https://andersonneto.gt.tc/assets/img/profile/an-portrait.png">
   <meta property="og:locale" content="pt_PT">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Anderson Neto | Junior Full-Stack Developer">
   <meta name="twitter:description" content="Portfólio de Anderson Neto, Junior Full-Stack Developer em Lisboa, especializado em React, Next.js, TypeScript, Node.js e desenvolvimento de aplicações web.">
-  <meta name="twitter:image" content="https://andersonneto.gt.tc/assets/img/profile/an.png">
+  <meta name="twitter:image" content="https://andersonneto.gt.tc/assets/img/profile/an-portrait.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +27,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="assets/css/index.css">
   <script defer src="assets/js/index.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anderson Neto",
+    "jobTitle": "Junior Full-Stack Developer",
+    "url": "https://andersonneto.gt.tc",
+    "image": "https://andersonneto.gt.tc/assets/img/profile/an-portrait.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lisboa",
+      "addressCountry": "PT"
+    },
+    "sameAs": [
+      "https://github.com/andersonneto18",
+      "https://linkedin.com/in/anderson-fullstack-developer"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a href="#home" class="skip-link">Saltar para o conteúdo</a>
@@ -49,8 +69,6 @@
         <a href="#projects" class="nav-link">Projetos</a>
         <a href="#experience" class="nav-link">Experiência</a>
         <a href="#skills" class="nav-link">Competências</a>
-        <a href="#about" class="nav-link">Sobre</a>
-        <a href="#education" class="nav-link">Formação</a>
         <a href="#contact" class="nav-link">Contacto</a>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar entre tema claro e escuro">
           <i class="fas fa-moon" aria-hidden="true"></i>
@@ -103,19 +121,19 @@
           </div>
 
           <ul class="quick-metrics">
-            <li><strong>3 anos</strong><span>formação e prática</span></li>
+            <li><strong>Estágio</strong><span>Full-Stack · Brand22</span></li>
             <li><strong>15+</strong><span>projetos desenvolvidos</span></li>
-            <li><strong>Full-Stack</strong><span>desenvolvimento ponta a ponta</span></li>
+            <li><strong>React · Next.js</strong><span>Node.js · TypeScript</span></li>
           </ul>
         </div>
 
         <aside class="hero-card" data-reveal="right" aria-label="Cartão de apresentação">
           <div class="avatar-wrap">
-            <img src="assets/img/profile/an.png"
+            <img src="assets/img/profile/an-portrait.png"
                  alt="Retrato de Anderson Neto, Junior Full-Stack Developer"
                  loading="lazy"
                  decoding="async"
-                 width="140" height="140">
+                 width="1170" height="1200">
           </div>
 
           <h2>Anderson Neto</h2>
@@ -131,7 +149,7 @@
             <li><i class="fas fa-code" aria-hidden="true"></i> TypeScript</li>
             <li><i class="fas fa-server" aria-hidden="true"></i> Node.js</li>
             <li><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</li>
-            <li class="tag-secondary"><i class="fab fa-stripe-s" aria-hidden="true"></i> Stripe API</li>
+            <li><i class="fas fa-hashtag" aria-hidden="true"></i> C# / .NET</li>
           </ul>
         </aside>
       </div>
@@ -152,11 +170,12 @@
   </div>
   <div class="project-body">
     <h3>FF Arena &mdash; Plataforma de Jogos P2P em Tempo Real</h3>
-    <p>
-      Desenvolvi uma plataforma P2P para jogadores de Free Fire, com
-      autenticação, matchmaking, torneios, gestão de carteiras, pagamentos,
-      resolução de disputas e painel administrativo.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Jogadores de Free Fire não tinham uma plataforma dedicada para organizar partidas P2P com apostas e torneios de forma segura.</dd>
+      <dt>Solução</dt>
+      <dd>Plataforma com autenticação, matchmaking em tempo real, torneios, carteiras, pagamentos, resolução de disputas e painel administrativo.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-code" aria-hidden="true"></i> Next.js</span>
       <span><i class="fas fa-code" aria-hidden="true"></i> TypeScript</span>
@@ -176,12 +195,12 @@
   </div>
   <div class="project-body">
     <h3>STP Market &mdash; Marketplace Multi-vendedor</h3>
-    <p>
-      Desenvolvi uma plataforma de e-commerce multi-vendedor que liga produtos
-      de São Tomé e Príncipe a clientes em Portugal, incluindo gestão de
-      vendedores, produtos, encomendas, comissões, pagamentos e processos
-      administrativos.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Vendedores de São Tomé e Príncipe não tinham um canal direto para vender os seus produtos a clientes em Portugal.</dd>
+      <dt>Solução</dt>
+      <dd>Marketplace multi-vendedor com gestão de vendedores, produtos, encomendas, comissões, pagamentos e processos administrativos.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-code" aria-hidden="true"></i> Next.js</span>
       <span><i class="fas fa-code" aria-hidden="true"></i> TypeScript</span>
@@ -203,11 +222,12 @@
   </div>
   <div class="project-body">
     <h3>Brand22 CRM &mdash; Gestão de Relacionamento com Clientes</h3>
-    <p>
-      Aplicação CRM desenvolvida para apoiar a gestão de clientes, interações
-      e processos internos da Brand22, integrando interface, lógica de
-      negócio, APIs e persistência de dados.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>A Brand22 precisava de centralizar a gestão de clientes, interações e processos internos.</dd>
+      <dt>Solução</dt>
+      <dd>CRM próprio que integra interface, lógica de negócio, APIs e persistência de dados.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fab fa-react" aria-hidden="true"></i> React</span>
       <span><i class="fas fa-server" aria-hidden="true"></i> Node.js</span>
@@ -225,11 +245,12 @@
   </div>
   <div class="project-body">
     <h3>Assistente Virtual CIMAT</h3>
-    <p>
-      Assistente virtual integrado no site da Comunidade Intermunicipal do
-      Alto Tâmega e Barroso, desenvolvido para responder a questões
-      institucionais e consultar informação dinâmica através de APIs.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Munícipes precisavam de uma forma rápida de obter respostas institucionais sem depender só do atendimento manual.</dd>
+      <dt>Solução</dt>
+      <dd>Assistente virtual integrado no site oficial, que responde a questões institucionais e consulta informação dinâmica através de APIs.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-file-code" aria-hidden="true"></i> HTML5</span>
       <span><i class="fas fa-palette" aria-hidden="true"></i> CSS3</span>
@@ -262,10 +283,12 @@
   </div>
   <div class="project-body">
     <h3>RHNeto Pro &mdash; Gestão de Restauração</h3>
-    <p>
-      Sistema full-stack para controlo de funcionários, equipas e operação diária
-      em restaurantes, com faturação, integração de pagamentos e painel de gestão.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Restaurantes sem um sistema centralizado para gerir funcionários, equipas e operação diária.</dd>
+      <dt>Solução</dt>
+      <dd>Sistema full-stack com controlo de equipas, faturação, pagamentos integrados e painel de gestão.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-file-code" aria-hidden="true"></i> HTML5</span>
       <span><i class="fas fa-palette" aria-hidden="true"></i> CSS3</span>
@@ -287,10 +310,12 @@
   </div>
   <div class="project-body">
     <h3>Brand22 &mdash; Plataforma de Gestão Empresarial</h3>
-    <p>
-      Aplicação web para centralizar a gestão de domínios, projetos e recursos
-      digitais da Brand22, com autenticação, operações CRUD e integração de APIs.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Gestão dispersa de domínios, projetos e recursos digitais da Brand22.</dd>
+      <dt>Solução</dt>
+      <dd>Plataforma central com autenticação, operações CRUD e integração de APIs.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-file-code" aria-hidden="true"></i> HTML5</span>
       <span><i class="fas fa-palette" aria-hidden="true"></i> CSS3</span>
@@ -309,11 +334,12 @@
   </div>
   <div class="project-body">
     <h3>OneMore &mdash; Marketplace de Tecnologia Recondicionada</h3>
-    <p>
-      Marketplace multi-vendedor de tecnologia recondicionada (iPhones, MacBooks,
-      Android, portáteis). Fornecedores vendem os seus produtos e recebem
-      automaticamente, com a comissão já calculada.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Fornecedores de tecnologia recondicionada (iPhones, MacBooks, Android, portáteis) sem uma plataforma para vender diretamente e receber de forma automática.</dd>
+      <dt>Solução</dt>
+      <dd>Marketplace multi-vendedor com pagamentos automáticos e comissão já calculada por venda.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-code" aria-hidden="true"></i> Next.js</span>
       <span><i class="fas fa-code" aria-hidden="true"></i> TypeScript</span>
@@ -335,11 +361,12 @@
   </div>
   <div class="project-body">
     <h3>SaaS de Gestão para Negócios de Serviços</h3>
-    <p>
-      SaaS para negócios de serviços (eletricistas, jardineiros, fotógrafos,
-      limpezas). Clientes, orçamentos, trabalhos, faturas, pagamentos e equipa
-      num só lugar. Orçamento com ligação pública que gera o trabalho ao ser aceite.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Pequenos negócios de serviços (eletricistas, jardineiros, fotógrafos, limpezas) a gerir clientes, orçamentos e faturas em ferramentas dispersas.</dd>
+      <dt>Solução</dt>
+      <dd>SaaS que centraliza clientes, orçamentos, trabalhos, faturas, pagamentos e equipa, com orçamento público que gera o trabalho ao ser aceite.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-code" aria-hidden="true"></i> Next.js</span>
       <span><i class="fas fa-code" aria-hidden="true"></i> TypeScript</span>
@@ -359,11 +386,12 @@
   </div>
   <div class="project-body">
     <h3>Assistente Virtual AMAT</h3>
-    <p>
-      Chatbot institucional para a AMAT &mdash; Associação de Municípios do Alto
-      Tâmega, integrado no site oficial. Responde a questões sobre serviços, áreas
-      de atuação, municípios e contactos, com integração de APIs REST.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Necessidade de responder a questões institucionais sobre a AMAT sem depender só de atendimento manual.</dd>
+      <dt>Solução</dt>
+      <dd>Chatbot integrado no site oficial, com respostas sobre serviços, áreas de atuação, municípios e contactos via APIs REST.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-file-code" aria-hidden="true"></i> HTML5</span>
       <span><i class="fas fa-palette" aria-hidden="true"></i> CSS3</span>
@@ -385,10 +413,12 @@
   </div>
   <div class="project-body">
     <h3>Chatbot Brand22 Creative Agency</h3>
-    <p>
-      Chatbot para a Brand22 Creative Agency, disponível 24/7 no site da empresa.
-      Responde a perguntas frequentes e apresenta serviços, portefólio e contactos.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>A Brand22 precisava de atendimento disponível fora do horário comercial.</dd>
+      <dt>Solução</dt>
+      <dd>Chatbot 24/7 que responde a perguntas frequentes e apresenta serviços, portefólio e contactos.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-robot" aria-hidden="true"></i> IA conversacional</span>
       <span><i class="fas fa-gears" aria-hidden="true"></i> Automação</span>
@@ -411,11 +441,12 @@
   </div>
   <div class="project-body">
     <h3>Bot de Monitorização e Alertas para Telegram</h3>
-    <p>
-      Sistema automatizado para recolha e processamento de dados em tempo real,
-      com envio de notificações e alertas para canais e grupos do Telegram através
-      de integrações e APIs.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Necessidade de acompanhar dados em tempo real sem monitorização manual constante.</dd>
+      <dt>Solução</dt>
+      <dd>Bot automatizado que recolhe e processa dados, enviando notificações e alertas para canais e grupos do Telegram.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-gears" aria-hidden="true"></i> Automação</span>
       <span><i class="fab fa-telegram" aria-hidden="true"></i> Telegram Bot</span>
@@ -435,10 +466,12 @@
   </div>
   <div class="project-body">
     <h3>Gestor de Campanhas Google Ads</h3>
-    <p>
-      Sistema para criar, acompanhar e otimizar campanhas de Google Ads de forma
-      centralizada, com integração direta à API do Google Ads.
-    </p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Gestão de campanhas Google Ads feita de forma dispersa, sem visão centralizada.</dd>
+      <dt>Solução</dt>
+      <dd>Sistema centralizado para criar, acompanhar e otimizar campanhas, integrado diretamente com a API do Google Ads.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-file-code" aria-hidden="true"></i> HTML5</span>
       <span><i class="fas fa-palette" aria-hidden="true"></i> CSS3</span>
@@ -456,7 +489,12 @@
   </div>
   <div class="project-body">
     <h3>DevBooks &mdash; Landing Page</h3>
-    <p>Página de conversão para venda de e-books de programação, com design moderno e estratégia de UX.</p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Falta de uma página otimizada para conversão na venda de e-books de programação.</dd>
+      <dt>Solução</dt>
+      <dd>Landing page com design moderno e estratégia de UX focada em conversão.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-file-code" aria-hidden="true"></i> HTML5</span>
       <span><i class="fas fa-palette" aria-hidden="true"></i> CSS3</span>
@@ -475,7 +513,12 @@
   </div>
   <div class="project-body">
     <h3>Temperos da Ilha</h3>
-    <p>Landing page imersiva para turismo e gastronomia de São Tomé e Príncipe, com foco visual forte.</p>
+    <dl class="project-ps">
+      <dt>Problema</dt>
+      <dd>Falta de uma presença visual forte para promover o turismo e a gastronomia de São Tomé e Príncipe online.</dd>
+      <dt>Solução</dt>
+      <dd>Landing page imersiva com identidade visual forte.</dd>
+    </dl>
     <div class="chips chips-small">
       <span><i class="fas fa-file-code" aria-hidden="true"></i> HTML5</span>
       <span><i class="fas fa-palette" aria-hidden="true"></i> CSS3</span>
@@ -504,7 +547,7 @@
             <ul>
               <li>Desenvolvimento de aplicações web full-stack e sistemas de negócio.</li>
               <li>Construção de interfaces com React e Next.js e integração com serviços back-end.</li>
-              <li>Desenvolvimento e integração de APIs REST.</li>
+              <li>Desenvolvimento e integração de APIs REST, incluindo componentes em C# e .NET.</li>
               <li>Integração e gestão de bases de dados.</li>
               <li>Implementação de autenticação, operações CRUD e lógica de negócio.</li>
               <li>Desenvolvimento de dashboards e funcionalidades orientadas às necessidades dos projetos.</li>
@@ -523,32 +566,49 @@
 
         <div class="skills-grid">
           <article class="skill-card" data-reveal="up">
-            <h3><i class="fas fa-star" aria-hidden="true"></i> Stack principal</h3>
-            <p class="skill-tier-label">Tecnologias com maior experiência prática</p>
+            <h3><i class="fas fa-display" aria-hidden="true"></i> Frontend</h3>
             <div class="chips">
               <span class="chip-primary"><i class="fas fa-atom" aria-hidden="true"></i> React</span>
               <span class="chip-primary"><i class="fas fa-code" aria-hidden="true"></i> Next.js</span>
               <span class="chip-primary"><i class="fas fa-code" aria-hidden="true"></i> TypeScript</span>
               <span class="chip-primary"><i class="fas fa-code" aria-hidden="true"></i> JavaScript</span>
-              <span class="chip-primary"><i class="fas fa-server" aria-hidden="true"></i> Node.js</span>
-              <span class="chip-primary"><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</span>
-              <span class="chip-primary"><i class="fas fa-database" aria-hidden="true"></i> MySQL</span>
               <span class="chip-primary"><i class="fas fa-wind" aria-hidden="true"></i> Tailwind CSS</span>
-              <span class="chip-primary"><i class="fas fa-plug" aria-hidden="true"></i> APIs REST</span>
-              <span class="chip-primary"><i class="fas fa-code-branch" aria-hidden="true"></i> Git</span>
               <span><i class="fas fa-file-code" aria-hidden="true"></i> HTML5</span>
               <span><i class="fas fa-palette" aria-hidden="true"></i> CSS3</span>
             </div>
           </article>
 
-          <article class="skill-card skill-card-secondary" data-reveal="up">
-            <h3><i class="fas fa-layer-group" aria-hidden="true"></i> Tecnologias complementares</h3>
-            <p class="skill-tier-label">Conhecimentos adquiridos em projetos e formação</p>
+          <article class="skill-card" data-reveal="up">
+            <h3><i class="fas fa-server" aria-hidden="true"></i> Backend</h3>
             <div class="chips">
+              <span class="chip-primary"><i class="fas fa-server" aria-hidden="true"></i> Node.js</span>
+              <span class="chip-primary"><i class="fas fa-plug" aria-hidden="true"></i> APIs REST</span>
+              <span><i class="fas fa-hashtag" aria-hidden="true"></i> C# / .NET</span>
               <span><i class="fab fa-php" aria-hidden="true"></i> PHP</span>
-              <span><i class="fas fa-hashtag" aria-hidden="true"></i> C# e .NET</span>
-              <span><i class="fab fa-bootstrap" aria-hidden="true"></i> Bootstrap</span>
+            </div>
+          </article>
+
+          <article class="skill-card" data-reveal="up">
+            <h3><i class="fas fa-database" aria-hidden="true"></i> Bases de Dados</h3>
+            <div class="chips">
+              <span class="chip-primary"><i class="fas fa-database" aria-hidden="true"></i> PostgreSQL</span>
+              <span class="chip-primary"><i class="fas fa-database" aria-hidden="true"></i> MySQL</span>
               <span><i class="fas fa-leaf" aria-hidden="true"></i> MongoDB</span>
+              <span><i class="fas fa-server" aria-hidden="true"></i> SQL Server</span>
+              <span><i class="fas fa-table" aria-hidden="true"></i> SQLite</span>
+            </div>
+          </article>
+
+          <article class="skill-card" data-reveal="up">
+            <h3><i class="fas fa-gears" aria-hidden="true"></i> Ferramentas</h3>
+            <div class="chips">
+              <span class="chip-primary"><i class="fas fa-code-branch" aria-hidden="true"></i> Git</span>
+              <span><i class="fab fa-stripe-s" aria-hidden="true"></i> Stripe API</span>
+              <span><i class="fab fa-bootstrap" aria-hidden="true"></i> Bootstrap</span>
+              <span><i class="fas fa-vial" aria-hidden="true"></i> Postman</span>
+              <span><i class="fas fa-image" aria-hidden="true"></i> Cloudinary</span>
+              <span><i class="fas fa-cube" aria-hidden="true"></i> Prisma</span>
+              <span><i class="fas fa-user-lock" aria-hidden="true"></i> Clerk</span>
             </div>
           </article>
 
