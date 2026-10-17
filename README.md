@@ -9,11 +9,11 @@ The website presents selected projects, professional experience, technical skill
 - Professional experience at Brand22
 - Brand22 CRM
 - Assistente Virtual CIMAT
+- Garimpo (200+ automated tests)
+- RHNeto Pro (final course project, top grade 20/20)
 - STP Market
-- FF Arena
-- RHNeto Pro
-- SaaS and marketplace projects
-- Full-stack, frontend and backend skills
+- AI chatbots for AMAT and Brand22
+- Portuguese and English versions, plus a freelance page
 
 ## Core stack
 

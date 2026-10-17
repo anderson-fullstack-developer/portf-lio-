@@ -2,3 +2,7 @@ node_modules/
 Thumbs.db
 .DS_Store
 *.log
+
+# Pacote de deploy gerado a partir dos ficheiros do site
+perfil-deploy.zip
+*.new.zip
