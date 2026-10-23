@@ -888,10 +888,80 @@ kbd {
   right: -36px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 12px;
+  gap: 12px;
+  padding: 10px 14px 10px 10px;
+  border-color: color-mix(in srgb, var(--dev) 45%, var(--line-2));
+  border-radius: 14px;
   font-size: 13px;
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: var(--shadow), 0 0 32px -12px color-mix(in srgb, var(--dev) 70%, transparent);
+  transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Cartão "A construir": leva ao projeto em destaque. */
+.float-status:hover,
+.float-status:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--dev);
+  box-shadow: var(--shadow), 0 0 40px -10px color-mix(in srgb, var(--dev) 90%, transparent);
+}
+
+.float-status-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.float-status-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.2;
+}
+
+.float-status-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dev);
+}
+
+.float-status strong {
+  font-size: 15px;
+}
+
+.float-status .dot-amber {
+  width: 7px;
+  height: 7px;
+  animation: dev-pulse 2s infinite;
+}
+
+.float-status-arrow {
+  color: var(--muted);
+  transition: transform 0.3s var(--ease), color 0.3s;
+}
+
+.float-status:hover .float-status-arrow,
+.float-status:focus-visible .float-status-arrow {
+  color: var(--dev);
+  transform: translate(2px, -2px);
+}
+
+@keyframes dev-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--dev) 60%, transparent); }
+  70% { box-shadow: 0 0 0 7px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .float-status .dot-amber {
+    animation: none;
+  }
 }
 
 .float-code {
