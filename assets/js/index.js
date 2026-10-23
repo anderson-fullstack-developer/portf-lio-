@@ -685,6 +685,7 @@ function openProject(id, startIndex = 0) {
   image.src = project.image;
   image.alt = project.imageAlt || `${t.shotAlt} ${project.title}`;
   image.parentElement.classList.toggle("is-contain", project.imageFit === "contain");
+  image.parentElement.style.backgroundColor = "";
 
   // Álbum: miniaturas que trocam a imagem principal (só em projetos com "gallery").
   const gallery = $("#dlgGallery");
@@ -696,6 +697,7 @@ function openProject(id, startIndex = 0) {
       image.src = shot.src;
       image.alt = shot.alt;
       image.parentElement.classList.toggle("is-contain", Boolean(shot.contain));
+      image.parentElement.style.backgroundColor = shot.bg || "";
       $$("button", gallery).forEach((btn, i) => btn.setAttribute("aria-current", String(i === index)));
     };
     gallery.replaceChildren(
