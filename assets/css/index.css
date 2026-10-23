@@ -3512,11 +3512,11 @@ dialog[open]::backdrop {
   color: var(--muted);
 }
 
-/* A imagem acompanha o scroll no detalhe do projeto */
+/* A imagem e o álbum acompanham o scroll no detalhe do projeto */
 @media (min-width: 981px) {
-  .dlg-media .browser {
+  .dlg-sticky {
     position: sticky;
-    top: 0;
+    top: 20px;
   }
 }
 
