@@ -640,7 +640,7 @@
             </div>
             <h3>Autenticação &amp; permissões</h3>
             <p>Contas, sessões e acesso às funcionalidades consoante a subscrição do utilizador.</p>
-            <ul class="tags eng-tags"><li>JWT</li><li>Argon2</li><li>Clerk</li><li>Webhooks</li></ul>
+            <ul class="tags eng-tags"><li>JWT</li><li>Argon2</li><li>Clerk</li><li>Sessões</li></ul>
             <p class="eng-proof"><span class="mono-label">Onde</span>JWT e Argon2 no <a class="proj-link" href="#projeto-garimpo">Garimpo</a> · Clerk no <a class="proj-link" href="#projeto-fala-neto">Fala Neto</a></p>
           </article>
 
@@ -649,10 +649,10 @@
               <span class="eng-icon"><svg class="i" width="20" height="20" aria-hidden="true"><use href="#i-flask"></use></svg></span>
               <span class="mono-num">03</span>
             </div>
-            <h3>Testes automatizados</h3>
-            <p>200 testes no backend do Garimpo, para mudar código sem partir alertas, filtros ou subscrições.</p>
-            <ul class="tags eng-tags"><li>Pytest</li><li>Testes parametrizados</li></ul>
-            <p class="eng-proof"><span class="mono-label">Onde</span><a class="proj-link" href="#projeto-garimpo">Garimpo</a></p>
+            <h3>Testes &amp; CI</h3>
+            <p>200 testes no backend do Garimpo e 114 no Fala Neto, com CI que corre lint, typecheck, testes e build em cada push.</p>
+            <ul class="tags eng-tags"><li>Pytest</li><li>Vitest</li><li>GitHub Actions</li></ul>
+            <p class="eng-proof"><span class="mono-label">Onde</span>Pytest no <a class="proj-link" href="#projeto-garimpo">Garimpo</a> · Vitest e CI no <a class="proj-link" href="#projeto-fala-neto">Fala Neto</a></p>
           </article>
 
           <article class="panel eng-card spotlight" data-reveal style="--i:0">
@@ -660,10 +660,10 @@
               <span class="eng-icon"><svg class="i" width="20" height="20" aria-hidden="true"><use href="#i-refresh"></use></svg></span>
               <span class="mono-num">04</span>
             </div>
-            <h3>Processos em background</h3>
-            <p>Monitorização contínua, deduplicação de resultados e notificações enviadas sem intervenção manual.</p>
-            <ul class="tags eng-tags"><li>Jobs em background</li><li>Deduplicação</li></ul>
-            <p class="eng-proof"><span class="mono-label">Onde</span><a class="proj-link" href="#projeto-garimpo">Garimpo</a>, com alertas no Telegram</p>
+            <h3>Background &amp; tempo real</h3>
+            <p>Monitorização contínua com deduplicação, tarefas agendadas e jogo multijogador em tempo real, sem intervenção manual.</p>
+            <ul class="tags eng-tags"><li>Jobs em background</li><li>Cron</li><li>WebSockets</li></ul>
+            <p class="eng-proof"><span class="mono-label">Onde</span>Alertas no Telegram no <a class="proj-link" href="#projeto-garimpo">Garimpo</a> · cron de follow-up no <a class="proj-link" href="#projeto-brand22-crm">CRM</a> · Arena em Socket.IO no <a class="proj-link" href="#projeto-fala-neto">Fala Neto</a></p>
           </article>
 
           <article class="panel eng-card spotlight" data-reveal style="--i:1">
@@ -674,7 +674,7 @@
             <h3>Pagamentos &amp; integrações</h3>
             <p>Checkout, subscrições e comissões com Stripe, confirmados por webhooks; emails e IA através de APIs externas.</p>
             <ul class="tags eng-tags"><li>Stripe</li><li>Webhooks</li><li>Emails transacionais</li></ul>
-            <p class="eng-proof"><span class="mono-label">Onde</span>Subscrições no <a class="proj-link" href="#projeto-garimpo">Garimpo</a> · comissões no <a class="proj-link" href="#projeto-stp-market">STP Market</a> · <a class="proj-link" href="#projeto-rhneto-pro">RHNeto Pro</a></p>
+            <p class="eng-proof"><span class="mono-label">Onde</span>Subscrições no <a class="proj-link" href="#projeto-garimpo">Garimpo</a> · comissões no <a class="proj-link" href="#projeto-stp-market">STP Market</a> · emails com Resend no <a class="proj-link" href="#projeto-brand22-crm">CRM</a> · IA com Claude API na <a class="proj-link" href="#projeto-cimat">CIMAT</a></p>
           </article>
 
           <article class="panel eng-card spotlight" data-reveal style="--i:2">
@@ -684,8 +684,8 @@
             </div>
             <h3>Modelação de dados &amp; multi-tenancy</h3>
             <p>Esquemas relacionais para cenários multiutilizador e multi-vendedor, com migrações versionadas.</p>
-            <ul class="tags eng-tags"><li>Modelação relacional</li><li>Migrations</li><li>Prisma</li></ul>
-            <p class="eng-proof"><span class="mono-label">Onde</span>38 modelos Prisma no <a class="proj-link" href="#projeto-fala-neto">Fala Neto</a> · multi-vendedor no <a class="proj-link" href="#projeto-stp-market">STP Market</a> · MySQL no <a class="proj-link" href="#projeto-brand22-crm">CRM</a></p>
+            <ul class="tags eng-tags"><li>Modelação relacional</li><li>Prisma</li><li>Alembic</li></ul>
+            <p class="eng-proof"><span class="mono-label">Onde</span>38 modelos Prisma no <a class="proj-link" href="#projeto-fala-neto">Fala Neto</a> · migrações Alembic no <a class="proj-link" href="#projeto-garimpo">Garimpo</a> · multi-vendedor no <a class="proj-link" href="#projeto-stp-market">STP Market</a></p>
           </article>
         </div>
       </div>
