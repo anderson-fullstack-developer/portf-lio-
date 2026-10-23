@@ -3181,7 +3181,7 @@ dialog[open]::backdrop {
 }
 
 .gallery-thumb {
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 16 / 10;
   padding: 0;
   overflow: hidden;
   border: 1px solid var(--line-2);
