@@ -2810,26 +2810,13 @@ dialog[open]::backdrop {
     padding: 36px 40px;
   }
 
-  .projects-grid > .project-card.is-wide:first-child:nth-last-child(odd) > .wide-media {
-    margin: 14px 0 14px 14px;
-  }
-
   .projects-grid > .project-card.is-wide:first-child:nth-last-child(odd) .browser-shot {
     aspect-ratio: 16 / 9;
     min-height: 0;
   }
 }
 
-/* Projeto principal: imagem 16:9 inteira + diagrama de arquitetura. */
-.project-card.is-wide > .wide-media {
-  margin: 14px 14px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 14px;
-}
-
-/* Sem moldura: a imagem funde-se com o cartão, com cantos iguais aos dele. */
+/* Imagem 16:9 sem moldura: funde-se com o cartão, com cantos iguais aos dele. */
 .project-card.is-wide .browser {
   border: 0;
   border-radius: calc(var(--radius-lg) - 6px);
@@ -2844,92 +2831,6 @@ dialog[open]::backdrop {
 
 .project-card.is-wide .browser-shot img {
   object-position: center;
-}
-
-.arch {
-  position: relative;
-  z-index: 3;
-  padding: 18px;
-  border: 1px solid var(--line-2);
-  border-radius: var(--radius);
-  background: var(--bg-2);
-}
-
-.arch-flow {
-  margin-top: 12px;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-}
-
-.arch-flow li {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: 12px 14px;
-  border: 1px solid var(--line-2);
-  border-radius: 10px;
-  background: var(--surface);
-}
-
-.arch-flow li:not(:last-child)::after {
-  content: "→";
-  position: absolute;
-  top: 50%;
-  right: -21px;
-  transform: translateY(-50%);
-  font-family: var(--font-mono);
-  color: var(--accent);
-}
-
-.arch-flow strong {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.arch-flow span {
-  font-size: 12.5px;
-  line-height: 1.4;
-  color: var(--muted-2);
-}
-
-.arch-side {
-  margin-top: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 16px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: var(--subtle);
-}
-
-.arch-side span::before {
-  content: "+ ";
-  color: var(--accent);
-}
-
-@media (max-width: 640px) {
-  .project-card.is-wide > .wide-media {
-    margin: 10px 10px 0;
-  }
-
-  .arch-flow {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 22px;
-  }
-
-  .arch-flow li:not(:last-child)::after {
-    content: "↓";
-    top: auto;
-    right: auto;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
 
 /* ---------- Engenharia ---------- */
@@ -3037,6 +2938,19 @@ dialog[open]::backdrop {
 .project-role .mono-label {
   font-size: 11px;
   color: var(--accent);
+}
+
+/* ---------- Cartão de projeto compacto ---------- */
+.project-summary {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--text-2);
+}
+
+.tags li.tag-more {
+  border-style: dashed;
+  color: var(--subtle);
+  cursor: help;
 }
 
 /* ---------- Estado de um projeto em desenvolvimento ---------- */
