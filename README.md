@@ -1,8 +1,8 @@
 # Anderson Neto — Developer Portfolio
 
-Personal portfolio for **Anderson Neto**, Junior Full-Stack Developer based in Lisbon, Portugal.
+Personal portfolio for **Anderson Neto**, Full-Stack Developer based in Lisbon, Portugal.
 
-The website presents selected projects, professional experience, technical skills, education and contact information, with a focus on Junior Full-Stack, Frontend and Software Developer opportunities.
+The website presents selected projects, professional experience, technical skills, education and contact information, with a focus on Full-Stack, Frontend and Software Developer opportunities.
 
 ## Portfolio highlights
 
