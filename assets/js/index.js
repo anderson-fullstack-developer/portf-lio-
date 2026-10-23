@@ -86,6 +86,36 @@ const I18N = {
 const t = I18N[LANG];
 const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
 
+/* ---------- Estatísticas (GoatCounter, sem cookies) ---------- */
+// Regista uma ação importante como evento; a página de origem fica no título.
+function track(name) {
+  if (window.goatcounter && typeof window.goatcounter.count === "function") {
+    window.goatcounter.count({ path: name, title: location.pathname, event: true });
+  }
+}
+
+// Cliques que interessam medir, por tipo de link.
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[href]");
+  if (!link) {
+    return;
+  }
+  const href = link.getAttribute("href");
+  if (href.includes("/docs/CV-")) {
+    track("cv-download");
+  } else if (href.startsWith("https://wa.me")) {
+    track("whatsapp");
+  } else if (href.startsWith("mailto:")) {
+    track("email");
+  } else if (href.includes("github.com")) {
+    track("github");
+  } else if (href.includes("linkedin.com")) {
+    track("linkedin");
+  } else if (link.classList.contains("link-arrow") && link.hostname !== location.hostname) {
+    track(`ver-projeto-${link.hostname.replace(/^www\./, "")}`);
+  }
+});
+
 /* ---------- Toast ---------- */
 const toastEl = $("#toast");
 let toastTimer = 0;
@@ -647,6 +677,9 @@ function openProject(id) {
   $("#dlgSolution").textContent = project.solution;
   $("#dlgRoleText").textContent = project.role;
   $("#dlgRole").hidden = !project.role;
+  // Aviso temporário do projeto (ex.: servidor em baixo). Sem "notice" nos dados, fica escondido.
+  $("#dlgNoticeText").textContent = project.notice || "";
+  $("#dlgNotice").hidden = !project.notice;
 
   const image = $("#dlgImage");
   image.src = project.image;
@@ -700,9 +733,14 @@ function openProject(id) {
 
   setLink($("#dlgLive"), project.url);
   setLink($("#dlgRepo"), project.repo);
-  $("#dlgNoLink").hidden = Boolean(project.url || project.repo);
+  const noLink = $("#dlgNoLink");
+  noLink.hidden = Boolean(project.url || project.repo);
+  // Texto próprio do projeto (ex.: "Domínio expirado") ou o texto por defeito da página.
+  noLink.dataset.default = noLink.dataset.default || noLink.textContent;
+  noLink.textContent = project.noLink || noLink.dataset.default;
 
   projectDialog.showModal();
+  track(`detalhes-${project.id}`);
 }
 
 document.addEventListener("click", (event) => {
@@ -748,6 +786,7 @@ $$(".copy-btn").forEach((btn) => {
     if (!ok) {
       return;
     }
+    track(btn.dataset.copy.includes("@") ? "copiar-email" : "copiar-telefone");
     btn.classList.add("is-copied");
     if (label) {
       label.textContent = t.copied;
@@ -818,7 +857,10 @@ const commands = [
     group: t.groups.actions,
     label: t.downloadCv,
     icon: "download",
-    run: () => downloadFile(t.cvHref, t.cvName)
+    run: () => {
+      track("cv-download");
+      downloadFile(t.cvHref, t.cvName);
+    }
   },
   { group: t.groups.actions, label: t.toggleTheme, icon: "moon", run: () => toggleTheme(themeToggle) },
   { group: t.groups.actions, label: t.switchLang, icon: "arrow-right", run: () => { window.location.href = t.otherLangHref; } },
@@ -1052,6 +1094,7 @@ if (contactForm && formStatus) {
       setStatus(t.sent, "success");
       showToast(t.sentToast);
       contactForm.reset();
+      track(contactForm.dataset.mailPrefix ? "orcamento-enviado" : "formulario-enviado");
     } catch (error) {
       setStatus(t.fallback, "error");
       const mailSubject = encodeURIComponent(`${mailPrefix} ${subject}`);

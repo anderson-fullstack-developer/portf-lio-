@@ -1098,6 +1098,7 @@ kbd {
 }
 
 .bento-location {
+  grid-row: span 2;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1105,7 +1106,8 @@ kbd {
 
 .map {
   position: relative;
-  height: 220px;
+  flex-grow: 1;
+  min-height: 220px;
   border-bottom: 1px solid var(--line);
   background-image: radial-gradient(var(--line-3) 1px, transparent 1px);
   background-size: 14px 14px;
@@ -1196,35 +1198,6 @@ kbd {
   margin-top: 4px;
   font-size: 15px;
   color: var(--muted-2);
-}
-
-.bento-now {
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.bento-now-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-
-.bento-now h3 {
-  font-size: 22px;
-  line-height: 1.3;
-}
-
-.bento-now p:not(.mono-label) {
-  font-size: 15px;
-  line-height: 1.55;
-  color: var(--muted-2);
-}
-
-.bento-now .tags {
-  margin-top: auto;
 }
 
 /* ---------- Experiência ---------- */
@@ -1695,22 +1668,10 @@ html:not(.js) .exp-line i {
   font-weight: 600;
 }
 
-.skill-other {
-  margin-top: auto;
-  padding-top: 18px;
-  border-top: 1px dashed var(--line-2);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.skill-other .mono-label {
-  font-size: 11px;
-}
-
-.skill-other p:last-child {
-  font-size: 14px;
-  line-height: 1.6;
+.skill-note {
+  margin-left: 0.4em;
+  font-size: 12.5px;
+  font-weight: 500;
   color: var(--muted-2);
 }
 
@@ -2446,9 +2407,13 @@ dialog[open]::backdrop {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .bento-main {
+  .bento-main,
+  .bento-location {
     grid-column: 1 / -1;
     grid-row: auto;
+  }
+
+  .bento-main {
     padding: 32px;
   }
 
@@ -2770,6 +2735,42 @@ dialog[open]::backdrop {
   animation: pulse 2.2s var(--ease) infinite;
 }
 
+/* Projeto temporariamente em baixo (ex.: falha no alojamento): aviso, não erro. */
+.badge-down {
+  --c: var(--dev);
+}
+
+.project-notice {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid color-mix(in srgb, var(--dev) 32%, transparent);
+  background: color-mix(in srgb, var(--dev) 9%, transparent);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted-2);
+}
+
+.project-notice[hidden] {
+  display: none;
+}
+
+.project-notice .mono-label {
+  color: var(--dev);
+}
+
+.project-actions:has(.project-notice-note) {
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+.project-notice-note {
+  flex-basis: 100%;
+}
+
 /* Um número ímpar de destaques: o primeiro ocupa a largura toda, em layout horizontal. */
 @media (min-width: 981px) {
   .projects-grid > .project-card:first-child:nth-last-child(odd) {
@@ -2791,6 +2792,127 @@ dialog[open]::backdrop {
 
   .projects-grid > .project-card:first-child:nth-last-child(odd) .project-body {
     padding: 36px 40px;
+  }
+
+  .projects-grid > .project-card.is-wide:first-child:nth-last-child(odd) > .wide-media {
+    margin: 14px 0 14px 14px;
+  }
+
+  .projects-grid > .project-card.is-wide:first-child:nth-last-child(odd) .browser-shot {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+  }
+}
+
+/* Projeto principal: imagem 16:9 inteira + diagrama de arquitetura. */
+.project-card.is-wide > .wide-media {
+  margin: 14px 14px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* Sem moldura: a imagem funde-se com o cartão, com cantos iguais aos dele. */
+.project-card.is-wide .browser {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 6px);
+  background: none;
+  box-shadow: 0 24px 48px -28px rgba(10, 40, 140, 0.55);
+}
+
+.project-card.is-wide .browser-shot {
+  aspect-ratio: 16 / 9;
+  background: #04102E;
+}
+
+.project-card.is-wide .browser-shot img {
+  object-position: center;
+}
+
+.arch {
+  position: relative;
+  z-index: 3;
+  padding: 18px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+  background: var(--bg-2);
+}
+
+.arch-flow {
+  margin-top: 12px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.arch-flow li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px;
+  border: 1px solid var(--line-2);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.arch-flow li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -21px;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  color: var(--accent);
+}
+
+.arch-flow strong {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.arch-flow span {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--muted-2);
+}
+
+.arch-side {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--subtle);
+}
+
+.arch-side span::before {
+  content: "+ ";
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .project-card.is-wide > .wide-media {
+    margin: 10px 10px 0;
+  }
+
+  .arch-flow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .arch-flow li:not(:last-child)::after {
+    content: "↓";
+    top: auto;
+    right: auto;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
