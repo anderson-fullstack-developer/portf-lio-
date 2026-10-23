@@ -713,6 +713,33 @@ function openProject(id) {
   );
   $("#dlgDecisionsWrap").hidden = decisions.length === 0;
 
+  // Arquitetura: camadas em fluxo e serviços externos ao lado.
+  const arch = project.arch;
+  const archWrap = $("#dlgArchWrap");
+  if (archWrap) {
+    archWrap.hidden = !arch;
+    if (arch) {
+      $("#dlgArchFlow").replaceChildren(
+        ...arch.flow.map(([name, desc]) => {
+          const li = document.createElement("li");
+          const strong = document.createElement("strong");
+          strong.textContent = name;
+          const span = document.createElement("span");
+          span.textContent = desc;
+          li.append(strong, span);
+          return li;
+        })
+      );
+      $("#dlgArchSide").replaceChildren(
+        ...(arch.side || []).map((item) => {
+          const span = document.createElement("span");
+          span.textContent = item;
+          return span;
+        })
+      );
+    }
+  }
+
   $("#dlgStack").replaceChildren(
     ...project.stack.map((tech, i) => {
       const li = document.createElement("li");

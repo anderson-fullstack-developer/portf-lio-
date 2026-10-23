@@ -2833,6 +2833,119 @@ dialog[open]::backdrop {
   object-position: center;
 }
 
+/* ---------- Arquitetura: linha compacta no cartão ---------- */
+.arch-mini {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+
+.arch-mini li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-2);
+}
+
+.arch-mini li span {
+  padding: 3px 9px;
+  border: 1px solid var(--accent-line);
+  border-radius: 6px;
+  background: var(--accent-soft);
+}
+
+.arch-mini li:not(:last-child)::after {
+  content: "→";
+  color: var(--accent);
+}
+
+/* ---------- Arquitetura: diagrama completo (janela de detalhes) ---------- */
+.arch {
+  padding: 18px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+  background: var(--bg-2);
+}
+
+.arch-flow {
+  margin-top: 12px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.arch-flow li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px;
+  border: 1px solid var(--line-2);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.arch-flow li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: -21px;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  color: var(--accent);
+}
+
+.arch-flow strong {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.arch-flow span {
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--muted-2);
+}
+
+.arch-side {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--subtle);
+}
+
+.arch-side span::before {
+  content: "+ ";
+  color: var(--accent);
+}
+
+@media (max-width: 640px) {
+  .arch-flow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .arch-flow li:not(:last-child)::after {
+    content: "↓";
+    top: auto;
+    right: auto;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 /* ---------- Engenharia ---------- */
 .eng-grid {
   display: grid;
