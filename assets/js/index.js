@@ -663,7 +663,7 @@ function setLink(el, href) {
   }
 }
 
-function openProject(id) {
+function openProject(id, startIndex = 0) {
   const project = projectsData.find((p) => p.id === id);
   if (!project || !projectDialog) {
     return;
@@ -685,6 +685,38 @@ function openProject(id) {
   image.src = project.image;
   image.alt = project.imageAlt || `${t.shotAlt} ${project.title}`;
   image.parentElement.classList.toggle("is-contain", project.imageFit === "contain");
+
+  // Álbum: miniaturas que trocam a imagem principal (só em projetos com "gallery").
+  const gallery = $("#dlgGallery");
+  if (gallery) {
+    const shots = project.gallery || [];
+    gallery.hidden = shots.length === 0;
+    const show = (index) => {
+      const shot = shots[index];
+      image.src = shot.src;
+      image.alt = shot.alt;
+      image.parentElement.classList.toggle("is-contain", Boolean(shot.contain));
+      $$("button", gallery).forEach((btn, i) => btn.setAttribute("aria-current", String(i === index)));
+    };
+    gallery.replaceChildren(
+      ...shots.map((shot, index) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "gallery-thumb";
+        btn.setAttribute("aria-label", shot.alt);
+        const img = document.createElement("img");
+        img.src = shot.src;
+        img.alt = "";
+        img.loading = "lazy";
+        btn.append(img);
+        btn.addEventListener("click", () => show(index));
+        return btn;
+      })
+    );
+    if (shots.length) {
+      show(Math.min(Number(startIndex) || 0, shots.length - 1));
+    }
+  }
 
   const featuresWrap = $("#dlgFeaturesWrap");
   const features = $("#dlgFeatures");
@@ -773,7 +805,7 @@ function openProject(id) {
 document.addEventListener("click", (event) => {
   const trigger = event.target.closest("[data-open-project]");
   if (trigger) {
-    openProject(trigger.dataset.openProject);
+    openProject(trigger.dataset.openProject, trigger.dataset.gallery);
   }
 });
 
