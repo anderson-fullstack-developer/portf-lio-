@@ -2899,9 +2899,20 @@ dialog[open]::backdrop {
     padding: 36px 40px;
   }
 
+  /* Imagem 16:9: não estica até à altura do texto (cortaria os lados); fica centrada. */
+  .projects-grid > .project-card.is-wide:first-child:nth-last-child(odd) {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  }
+
+  .projects-grid > .project-card.is-wide:first-child:nth-last-child(odd) > .browser {
+    align-self: center;
+    margin: 14px 0 14px 14px;
+  }
+
   .projects-grid > .project-card.is-wide:first-child:nth-last-child(odd) .browser-shot {
     aspect-ratio: 16 / 9;
     min-height: 0;
+    width: 100%;
   }
 }
 
