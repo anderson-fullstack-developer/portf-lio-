@@ -4,6 +4,8 @@ Personal portfolio for **Anderson Neto**, Full-Stack Developer based in Lisbon, 
 
 The website presents selected projects, professional experience, technical skills, education and contact information, with a focus on Full-Stack, Frontend and Software Developer opportunities.
 
+[![Portfolio home page](docs/screenshot.png)](https://andersonneto.gt.tc)
+
 ## Portfolio highlights
 
 - Brand22 CRM — internal CRM in production
